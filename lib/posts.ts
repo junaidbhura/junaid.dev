@@ -105,7 +105,7 @@ export async function getPostData(id: string): Promise<PostData & { id: string; 
     // Use remark to convert markdown into HTML string with syntax highlighting
     const processedContent = await remark()
         .use(remarkRehype)
-        .use(rehypeHighlight, { ignoreMissing: true }) // Add syntax highlighting
+        .use(rehypeHighlight) // Add syntax highlighting
         .use(rehypeStringify)
         .process(matterResult.content) as ProcessedContent;
     const contentHtml = processedContent.toString();

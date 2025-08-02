@@ -12,8 +12,9 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each post
-export async function generateMetadata({ params }: { params: { slug: string[] } }): Promise<Metadata> {
-  const postId = params.slug[0];
+export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const postId = slug[0];
 
   try {
     const postData = await getPostData(postId);
@@ -29,9 +30,10 @@ export async function generateMetadata({ params }: { params: { slug: string[] } 
   }
 }
 
-export default async function Post({ params }: { params: { slug: string[] } }) {
+export default async function Post({ params }: { params: Promise<{ slug: string[] }> }) {
   // Get the post ID from the slug
-  const postId = params.slug[0];
+  const { slug } = await params;
+  const postId = slug[0];
 
   try {
     // Fetch the post data
