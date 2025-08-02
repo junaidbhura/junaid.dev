@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="158" height="158" viewBox="0 0 158 158">
+  <g fill-rule="evenodd">
+    <rect width="50" height="50" x="54"/>
+    <rect width="50" height="50" x="54" y="54"/>
+    <rect width="50" height="50" x="54" y="108"/>
+    <rect width="50" height="50" x="108" y="108"/>
+    <rect width="50" height="50" x="108" y="54"/>
+    <rect width="50" height="50" y="108"/>
+  </g>
+</svg>
